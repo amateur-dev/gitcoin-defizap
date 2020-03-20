@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build:contracts": "openzeppelin compile"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/amateur-dev/gitcoin-defizap.git"
