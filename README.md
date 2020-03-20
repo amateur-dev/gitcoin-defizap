@@ -1,7 +1,7 @@
 # ZapContract for GitCoin
 
 ## Objective
-The objective of this repo is the gitcoinZap Contract.
+The objective of this repo is the (gitcoinZap Contract)[https://github.com/amateur-dev/gitcoin-defizap/blob/master/contracts/gitcoinZap.sol].
 This contract is essentially helpful when the ultimate donor wants to donate Dai to more than one Grants
 
 ## Running instructions
