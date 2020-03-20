@@ -57,7 +57,7 @@ contract gitcoinZap in Ownable, Initializable, ReentrancyGuard {
      * @param totalGrants this is a minor security check wrt to the number of total number of donations in the cart
     */
 
-    function donateDAI(address[] memory toWhom, uint[] memory amount, uint8 totalGrants) public {
+    function zapDonate(address[] memory toWhom, uint[] memory amount, uint8 totalGrants) public {
         require(toWhom.length == amount.length && toWhom.length == totalGrants, "error in parameters furnished");
         uint totalAmt;
         for (uint i = 0; i < amount.length; i++) {
