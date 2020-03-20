@@ -31,7 +31,6 @@ import "../node_modules/@openzeppelin/upgrades/contracts/Initializable.sol";
 import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20.sol";
 
-
 ///@author DeFiZap
 ///@notice this contract assits in one shot Dai donation to the GitCoin Projects
 
@@ -58,10 +57,6 @@ contract gitcoinZap is Initializable {
 
     function zapDonate(address[] memory toWhom, uint[] memory amount, uint8 totalGrants) public {
         require(toWhom.length == amount.length && toWhom.length == totalGrants, "error in parameters furnished");
-        uint totalAmt;
-        for (uint i = 0; i < amount.length; i++) {
-            totalAmt = totalAmt.add(amount[i]);
-        }
         for (uint i = 0; i < toWhom.length; i++) {
             IERC20(daiTokenAddress).transferFrom(msg.sender,toWhom[i], amount[i]);
         }
