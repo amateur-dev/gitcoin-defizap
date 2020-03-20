@@ -27,7 +27,7 @@
     "@openzeppelin/upgrades": "^2.6.0",
     "@truffle/hdwallet-provider": "^1.0.23",
     "dotenv": "^8.2.0",
-    "solc": "^0.6.4",
+    "solc": "^0.5.13",
     "truffle-flattener": "^1.4.2"
   },
   "devDependencies": {

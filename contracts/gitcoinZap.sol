@@ -25,20 +25,19 @@
  *
  * See https://docs.zeppelinos.org/docs/writing_contracts.html for more info.
 */
-
-import "../node_modules/@openzeppelin/upgrades/contracts/Initializable";
-import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath";
-import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20";
-
 pragma solidity ^0.5.0;
+
+import "../node_modules/@openzeppelin/upgrades/contracts/Initializable.sol";
+import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
+import "../node_modules/@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/IERC20.sol";
+
 
 ///@author DeFiZap
 ///@notice this contract assits in one shot Dai donation to the GitCoin Projects
 
-contract gitcoinZap in Ownable, Initializable, ReentrancyGuard {
+contract gitcoinZap is Initializable {
     using SafeMath for uint256;
     address public daiTokenAddress;
-    
     /**
      * @dev the contract is an upgradable contract hence, it is a must
      * that this initialize function is run soon after the deployment of
@@ -61,7 +60,7 @@ contract gitcoinZap in Ownable, Initializable, ReentrancyGuard {
         require(toWhom.length == amount.length && toWhom.length == totalGrants, "error in parameters furnished");
         uint totalAmt;
         for (uint i = 0; i < amount.length; i++) {
-            totalAmt = total.add(amount[i]);
+            totalAmt = totalAmt.add(amount[i]);
         }
         for (uint i = 0; i < toWhom.length; i++) {
             IERC20(daiTokenAddress).transferFrom(msg.sender,toWhom[i], amount[i]);
