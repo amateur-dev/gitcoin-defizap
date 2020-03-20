@@ -1,0 +1,18 @@
+{
+  "manifestVersion": "2.2",
+  "contracts": {},
+  "dependencies": {},
+  "name": "gitcoin-defizap",
+  "version": "1.0.0",
+  "compiler": {
+    "manager": "openzeppelin",
+    "solcVersion": "0.5.13",
+    "compilerSettings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": "500"
+      }
+    }
+  },
+  "telemetryOptIn": true
+}
